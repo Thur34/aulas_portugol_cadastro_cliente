@@ -1,0 +1,103 @@
+Algoritmo "semnome"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 07/12/2022
+Var
+   // Seção de Declarações das variáveis
+   nome:caracter
+   idade_cliente:inteiro
+   email_cliente:caracter
+   endereco_cliente:caracter
+   codigo:inteiro
+
+procedimento solicitar_nome
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   escreva ("Digite seu nome: ")
+   leia (nome)
+fimprocedimento
+
+funcao validar_nome(nome:caracter):logico
+inicio
+   se (nome="") entao
+      retorne FALSO
+   senao
+      retorne VERDADEIRO
+   fimse
+fimfuncao
+
+procedimento solicitar_idade
+inicio
+   escreva ("digite sua idade: ")
+   leia (idade_cliente)
+fimprocedimento
+
+funcao validar_idade(idade_cliente: inteiro):logico
+inicio
+se (idade_cliente <= 0) entao
+   retorne FALSO
+senao
+   retorne VERDADEIRO
+fimse
+fimfuncao
+
+
+procedimento solicitar_email
+inicio
+   escreva ("digite seu email:")
+   leia (email_cliente)
+fimprocedimento
+
+funcao validar_email(email_cliente:caracter):logico
+inicio
+se(email_cliente="") entao
+   retorne FALSO
+senao
+   retorne VERDADEIRO
+fimse
+fimfuncao
+
+procedimento solicitar_endereco
+inicio
+   escreva("digite seu endereço")
+   leia (endereco_cliente)
+fimprocedimento
+
+
+inicio
+   solicitar_nome
+
+   enquanto (validar_nome(nome)=FALSO) faca
+      escreval("dado inválido")
+      solicitar_nome()
+   fimenquanto
+
+
+   solicitar_idade
+   enquanto (validar_idade(idade_cliente) = FALSO) faca
+      escreval("dado inválido")
+      solicitar_idade()
+   fimenquanto
+
+
+   solicitar_email
+   enquanto (validar_email(email_cliente) = FALSO) faca
+      escreval("dado inválido")
+      solicitar_email()
+   fimenquanto
+
+   limpatela
+
+   codigo <- randi(0987654321) + 1
+
+   escreval("======================================")
+   escreval("código usuário",codigo)
+   escreval("nome:",nome)
+   escreval("idade:",idade_cliente)
+   escreval("email:",email_cliente)
+   escreval("endereço:",endereco_cliente)
+
+Fimalgoritmo
